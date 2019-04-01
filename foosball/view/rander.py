@@ -10,6 +10,7 @@ import json
 
 @app.route('/', methods=['GET'])
 def home():
+    print("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee")
     return render_template('index.html')
 
 @app.errorhandler(400)
