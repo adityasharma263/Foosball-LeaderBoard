@@ -8,6 +8,7 @@ import datetime
 # from geopy.geocoders import Nominatim
 import json
 
+print("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee1111111111111111111")
 @app.route('/', methods=['GET'])
 def home():
     print("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee")
@@ -18,16 +19,4 @@ def page_not_found():
     return render_template("404.html"), 400
 
 
-# @app.route('/hotel', methods=['GET'])
-# def hotel():
-#     return render_template('hotel/hotel.html')
 
-
-# @app.route('/hotel/list', methods=['GET'])
-# def hotel_list():
-#     return render_template('hotel/hotel_list.html')
-
-
-@app.route('/hotel/<hotel_id>', methods=['GET'])
-def hotel_detail(hotel_id):
-    return render_template('hotel/hotel_detail.html')
