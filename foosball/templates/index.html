@@ -1,125 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Foosball</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->
-	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="css/util.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-<!--===============================================================================================-->
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 <body>
 
+<h1  style="text-align:center;" >Enter Scores</h1>
+<div class="container" style="margin-top: 60px;">
+<a  href="/dashboard">View dashboard>></a>
+<hr>
+<div class="row" >
+	<div class = "col-sm-6">
+  <form action="http://localhost:5000/" method = "POST">
+  <h2>Team A</h2>
 
-	<div class="container-contact100">
-		<div class="wrap-contact100">
-			<form class="contact100-form validate-form">
-				<span class="contact100-form-title">
-					Enter Results
-				</span>
-				<h3>Team A</h3>
-				<div class="wrap-input100 validate-input" data-validate="Name is required">
-					<span class="label-input100">Player Name</span>
-					<input class="input100" type="text" name="name" placeholder="Enter Player name">
-					<span class="focus-input100"></span>
-				</div>
-
-				<div class="wrap-input100 validate-input" data-validate="Name is required">
-					<span class="label-input100">Player Name</span>
-					<input class="input100" type="text" name="name" placeholder="Enter Player name">
-					<span class="focus-input100"></span>
-				</div>
-				<div class="wrap-input100 validate-input" data-validate="Name is required">
-					<span class="label-input100">Score</span>
-					<input class="input100" type="number" name="name" placeholder="Enter Team score">
-					<span class="focus-input100"></span>
-				</div>
-				<h3>Team B</h3>
-				<div class="wrap-input100 validate-input" data-validate="Name is required">
-					<span class="label-input100">Player Name</span>
-					<input class="input100" type="text" name="name" placeholder="Enter Player name">
-					<span class="focus-input100"></span>
-				</div>
-				<div class="wrap-input100 validate-input" data-validate="Name is required">
-					<span class="label-input100">Player Name</span>
-					<input class="input100" type="text" name="name" placeholder="Enter Player name">
-					<span class="focus-input100"></span>
-				</div>
-				<div class="wrap-input100 validate-input" data-validate="Name is required">
-					<span class="label-input100">Score</span>
-					<input class="input100" type="number" name="name" placeholder="Enter Team score">
-					<span class="focus-input100"></span>
-				</div>
-
-				<div class="container-contact100-form-btn">
-					<div class="wrap-contact100-form-btn">
-						<div class="contact100-form-bgbtn"></div>
-						<button class="contact100-form-btn">
-							<span>
-								Submit
-								<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
-							</span>
-						</button>
-					</div>
-				</div>
-			</form>
+    <div class="form-group">
+      <label>Player 1:</label>
+      <input type="text" class="form-control" name="first_player_name" style="width:50%" placeholder="Player 1 name">
+    </div>
+    <div class="form-group">
+      <label>Player 2:</label>
+      <input type="text" class="form-control" name="second_player_name" style="width:50%" placeholder="Player 2 name">
+    </div>
+     <div class="form-group">
+      <label>Score:</label>
+      <input type="number" class="form-control" name="score" style="width:50%">
+    </div>
+	    <button type="submit" value = "submit" class="btn btn-default">Submit</button>
+  </form>
 		</div>
+<div class = "col-sm-6">
+	<form action="http://localhost:5000/" method = "POST">
+     <h2>Team B</h2>
+    <div class="form-group">
+      <label>Player 3:</label>
+      <input type="text" class="form-control" name="first_player_name" style="width:50%" placeholder="Player 3 name">
+    </div>
+    <div class="form-group">
+      <label>Player 4:</label>
+      <input type="text" class="form-control" name="second_player_name" style="width:50%" placeholder="Player 4 name">
+    </div>
+     <div class="form-group">
+      <label>Score:</label>
+      <input type="number" class="form-control" name="score" style="width:50%">
+    </div>
+    <button type="submit" value = "submit" class="btn btn-default">Submit</button>
+  </form>
 	</div>
-
-
-
-	<div id="dropDownSelect1"></div>
-
-<!--===============================================================================================-->
-	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/animsition/js/animsition.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/bootstrap/js/popper.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/select2/select2.min.js"></script>
-	<script>
-		$(".selection-2").select2({
-			minimumResultsForSearch: 20,
-			dropdownParent: $('#dropDownSelect1')
-		});
-	</script>
-<!--===============================================================================================-->
-	<script src="vendor/daterangepicker/moment.min.js"></script>
-	<script src="vendor/daterangepicker/daterangepicker.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/countdowntime/countdowntime.js"></script>
-<!--===============================================================================================-->
-	<script src="js/main.js"></script>
-
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-23581568-13');
-</script>
+    </div>
+</div>
 
 </body>
 </html>
-

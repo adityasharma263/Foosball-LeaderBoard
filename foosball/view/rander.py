@@ -10,6 +10,9 @@ import json
 
 @app.route('/', methods=['GET','POST'])
 def home():
+    if request.method == 'POST':
+        post_data = request.form.to_dict()
+        requests.post('http://127.0.0.1:5000/api/v1/team', json=post_data)
     return render_template('index.html')
 
 @app.errorhandler(400)
