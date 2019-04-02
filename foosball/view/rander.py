@@ -8,10 +8,8 @@ import datetime
 # from geopy.geocoders import Nominatim
 import json
 
-print("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee1111111111111111111")
-@app.route('/', methods=['GET'])
+@app.route('/', methods=['GET','POST'])
 def home():
-    print("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee")
     return render_template('index.html')
 
 @app.errorhandler(400)
@@ -19,4 +17,18 @@ def page_not_found():
     return render_template("404.html"), 400
 
 
+@app.route('/dashboard', methods=['GET'])
+def dashboard():
+    rank = 0
+    score = 0
+    team_url = 'http://127.0.0.1:5000/api/v1/team'
+    teams = requests.get(url=team_url).json()['result']['teams']
+    for team in teams:
+        if score == team['score']:
+            rank = rank
+        else:
+            rank = rank + 1
+        team['rank'] = rank
+        score = team['score']
+    return render_template('dashboard.html', teams=teams)
 

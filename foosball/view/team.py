@@ -11,12 +11,16 @@ import simplejson as json
 @app.route('/api/v1/team', methods=['GET', 'POST'])
 def team_api():
     if request.method == 'GET':
-        args = request.args.to_dict()
-        args.pop('page', None)
-        args.pop('per_page', None)
-        page = int(request.args.get('page', 1))
-        per_page = int(request.args.get('per_page', 10))
-        data = Team.query.filter_by(**args).offset((page - 1) * per_page).limit(per_page).all()
+        # args = request.args.to_dict()
+        # args.pop('page', None)
+        # args.pop('per_page', None)
+        # page = int(request.args.get('page', 1))
+        # per_page = int(request.args.get('per_page', 10))
+        score = Team.query.order_by(Team.score.desc()).distinct(Team.score).limit(10).all()[-1].score
+        data = Team.query.filter(Team.score >= score).order_by(Team.score.desc()).all()
+        # for obj in data:
+        #     print(obj.score)
+        # data = Team.query.filter_by(**args).max(Team.score).limit(10).all()
         result = TeamSchema(many=True).dump(data)
         return jsonify({'result': {'teams': result.data}, 'message': "Success", 'error': False})
     else:
