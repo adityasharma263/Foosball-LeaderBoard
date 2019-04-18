@@ -10,10 +10,15 @@ import json
 
 @app.route('/', methods=['GET','POST'])
 def home():
-    if request.method == 'POST':
+    if request.method == 'GET':
+        return render_template('index.html')
+    elif request.method == 'POST':
         post_data = request.form.to_dict()
-        requests.post('http://127.0.0.1:5000/api/v1/team', json=post_data)
-    return render_template('index.html')
+        res = requests.post('http://127.0.0.1:5000/api/v1/team', json=post_data)
+        print(res.json(), "response")
+        response = res.json()
+        return render_template('index.html', response=response)
+
 
 @app.errorhandler(400)
 def page_not_found():
